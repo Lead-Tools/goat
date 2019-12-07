@@ -72,17 +72,14 @@ Procedure TestAsync(Command)
 	
 	// Пользовательский этап
 	Stages.Add(Pnp.CustomStage("StageTail2", ThisObject, New Structure));
-	
-	// Стандартный этап для остановки конвейера
-	Stages.Add(Pnp.StageStopPipeline(Undefined));
-	
+		
 	#EndRegion // Stages
 	
 	// Обработчик ошибок, возникших на конвейере
 	ErrorHandler = New NotifyDescription("ErrorHandler", ThisObject, New Structure);
 	
 	// Запуск конвейера
-	Pnp.RunPipeline(Stages, ErrorHandler, "DataProcessor.Test.Form.TestAsync");
+	Pnp.RunPipeline(Stages, ErrorHandler, Undefined, "DataProcessor.Test.Form.TestAsync");
 	
 EndProcedure
 
@@ -125,14 +122,11 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	
 	// Пользовательский этап
 	Stages.Add(Pnp.CustomStage("StageTail1", ThisObject, New Structure));
-	
-	// Стандартный этап для остановки конвейера
-	Stages.Add(Pnp.StageStopPipeline(AdditionalParameters.Continuation));
-	
+		
 	#EndRegion // Stages
 	
 	// Запуск конвейера
-	Pnp.RunPipeline(Stages, ErrorHandler, "DataProcessor.Test.Form.ShowFileDialogCallback");
+	Pnp.RunPipeline(Stages, ErrorHandler, AdditionalParameters.Continuation, "DataProcessor.Test.Form.ShowFileDialogCallback");
 	
 EndProcedure
 
