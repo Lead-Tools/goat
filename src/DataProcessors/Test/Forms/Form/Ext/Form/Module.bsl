@@ -68,16 +68,13 @@ Procedure TestAsync(Command)
 	ShowFileDialogCallback = New NotifyDescription("ShowFileDialogCallback", ThisObject, New Structure);
 	
 	// Стандартный этап для выбора файла/каталога в стандартном диалоге
-	StageShowFileDialog = Pnp.StageShowFileDialog(ShowFileDialogCallback, FileOpenDialog);
-	Stages.Add(StageShowFileDialog);
+	Stages.Add(Pnp.StageShowFileDialog(ShowFileDialogCallback, FileOpenDialog));
 	
 	// Пользовательский этап
-	StageTail2 = Pnp.CustomStage("StageTail2", ThisObject, New Structure);
-	Stages.Add(StageTail2);
+	Stages.Add(Pnp.CustomStage("StageTail2", ThisObject, New Structure));
 	
 	// Стандартный этап для остановки конвейера
-	StageStopPipeline = Pnp.StageStopPipeline(Undefined);
-	Stages.Add(StageStopPipeline);
+	Stages.Add(Pnp.StageStopPipeline(Undefined));
 	
 	#EndRegion // Stages
 	
@@ -116,30 +113,24 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	#Region Stages
 	
 	// Стандартный этап для создания каталога
-	StageBeginCreatingDirectory = Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName);
-	Stages.Add(StageBeginCreatingDirectory);
+	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName));
 	
 	// Стандартный этап для создания каталога
-	StageBeginCreatingDirectory = Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName + "AccessVerification\", PipelineErrorHandler);
-	Stages.Add(StageBeginCreatingDirectory);
+	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName + "AccessVerification\", PipelineErrorHandler));
 	
 	// Стандартный этап для удаления каталога	
-	StageBeginDeletingFiles = Pnp.StageBeginDeletingFiles(Undefined, DirectoryName + "AccessVerification\", Undefined);
-	Stages.Add(StageBeginDeletingFiles);
+	Stages.Add(Pnp.StageBeginDeletingFiles(Undefined, DirectoryName + "AccessVerification\", Undefined));
 	
 	// Пользовательский этап	
 	StageParameters = New Structure;
 	StageParameters.Insert("DirectoryName", DirectoryName);
-	StageSuccess = Pnp.CustomStage("StageSuccess", ThisObject, StageParameters);
-	Stages.Add(StageSuccess);
+	Stages.Add(Pnp.CustomStage("StageSuccess", ThisObject, StageParameters));
 	
 	// Пользовательский этап
-	StageTail1 = Pnp.CustomStage("StageTail1", ThisObject, New Structure);
-	Stages.Add(StageTail1);
+	Stages.Add(Pnp.CustomStage("StageTail1", ThisObject, New Structure));
 	
 	// Стандартный этап для остановки конвейера
-	StageStopPipeline = Pnp.StageStopPipeline(AdditionalParameters.Continuation);
-	Stages.Add(StageStopPipeline);
+	Stages.Add(Pnp.StageStopPipeline(AdditionalParameters.Continuation));
 	
 	#EndRegion // Stages
 	
