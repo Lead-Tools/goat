@@ -1,2 +1,9 @@
 # pnp
-Pipeline Notify Processing
+
+Pipeline Notify Processing (Конвейерная обработка оповещений для платформы 1С:Предприятие)
+
+Экспериментальный подход к избавлению от "лапши" из коллбэков в асинхронном коде.
+
+Философия:
+* MDD (Magic Driven Development)
+* не сцы
