@@ -5,6 +5,11 @@
 
 #Region Public
 
+// Строит и сразу запускает конвейер.
+// Stages - массив этапов
+// ErrorHandler - обработчик ошибок на всех этапах
+// Continuation - обработчик этапа, которому будет передано управление по окончании конвейера (например для возврата в родительский конвейер)
+// CallerName - Имя вызывающей процедуры (для отладки)
 Procedure RunPipeline(Stages, ErrorHandler, Continuation, CallerName) Export
 	
 	Pipeline = BuildNotifyProcessingPipeline(Stages, ErrorHandler, Continuation);
@@ -13,6 +18,10 @@ Procedure RunPipeline(Stages, ErrorHandler, Continuation, CallerName) Export
 	
 EndProcedure 
 
+// Строит конвейер (цепочку обработчиков этапов) из массива этапов.
+// Stages - массив этапов
+// ErrorHandler - обработчик ошибок на всех этапах
+// Continuation - обработчик этапа, которому будет передано управление по окончании конвейера (например для возврата в родительский конвейер)
 Function BuildNotifyProcessingPipeline(Stages, ErrorHandler, Continuation) Export
 	
 	If Stages.Count() = 0 Then
@@ -38,6 +47,10 @@ Function BuildNotifyProcessingPipeline(Stages, ErrorHandler, Continuation) Expor
 	
 EndFunction 
 
+// Запускает на выполнение обработчик этапа.
+// StageHandler - обработчик этапа (см. StageHandler())
+// CallerName - Имя вызывающей процедуры (для отладки)
+// AdditionalParameters - TODO: вспомнить зачем я сделал этот параметр
 Procedure Invoke(StageHandler, CallerName, AdditionalParameters = Undefined) Export
 	
 	Context = New Structure;
@@ -49,6 +62,7 @@ Procedure Invoke(StageHandler, CallerName, AdditionalParameters = Undefined) Exp
 	
 EndProcedure 
 
+// Синхронный пользовательский этап. По окончании управление сразу передается на следующий этап в конвейере.
 Function CustomStage(ProcedureName = Undefined, Module = Undefined, AdditionalParameters = Undefined) Export
 	
 	NotifyDescription = New NotifyDescription(
@@ -70,6 +84,20 @@ Function CustomStage(ProcedureName = Undefined, Module = Undefined, AdditionalPa
 	
 EndFunction  
 
+// Асинхронный пользовательский этап.
+Function CustomAsyncStage(ProcedureName = Undefined, Module = Undefined, AdditionalParameters = Undefined) Export
+	
+	NotifyDescription = New NotifyDescription(
+		ProcedureName,
+		Module,
+		AdditionalParameters
+	);	
+	
+	Return NotifyDescription;
+	
+EndFunction
+
+// TODO: удалить если нет смысла для клиентского кода
 Procedure ErrorHandler(ErrorInfo, StandardProcessing, AdditionalParameters) Export
 	
 	PipelineNotifyProcessingInternalClient.ErrorHandler(ErrorInfo, StandardProcessing, AdditionalParameters);
@@ -130,6 +158,7 @@ Function StageBeginDeletingFiles(NotifyDescription, Path, Mask = Undefined, Erro
 	
 EndFunction
 
+// TODO: убрать в Private если нет смысла для клиентского кода 
 Function StageStopPipeline(ParentPiplineContinuation) Export
 	
 	AdditionalParameters = New Structure;
@@ -151,6 +180,10 @@ EndFunction
 
 #Region Private
 
+// Создает новый обработчик этапа.
+// NotifyDescription - этап, для которого нужно создать обработчик
+// ContinuationNotifyDescription - следующий этап
+// ErrorNotifyDescription - обработчик ошибок
 Function StageHandler(NotifyDescription, ContinuationNotifyDescription, ErrorNotifyDescription)
 		
 	AdditionalParameters = New Structure;
