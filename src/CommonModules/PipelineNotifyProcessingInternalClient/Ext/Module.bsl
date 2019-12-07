@@ -1,4 +1,8 @@
 ﻿
+// Copyright 2019 Tsukanov Alexander. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
 #Region Public
 
 Procedure ExecuteStage(Context, AdditionalParameters) Export
@@ -266,6 +270,18 @@ Procedure BeginCreatingDirectoryWrapper(Result, AdditionalParameters) Export
 EndProcedure
 
 #EndRegion // Wrappers
+
+#Region Decorators
+
+Procedure CustomStageDecorator(Context, AdditionalParameters) Export
+	
+	ExecuteNotifyProcessing(AdditionalParameters.NotifyDescription, Context); // TODO: может быть не Context?
+	
+	PipelineNotifyProcessingClient.Invoke(Context.Continuation, "PipelineNotifyProcessingInternalClient.CustomStageDecorator");
+	
+EndProcedure 
+
+#EndRegion // Decorators
 
 #EndRegion // Public
 

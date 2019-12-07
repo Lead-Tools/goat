@@ -1,22 +1,34 @@
 ﻿
+// Copyright 2019 Tsukanov Alexander. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
 #Region Public
 
-Function BuildNotifyProcessingPipeline(NotifyProcessingList, ErrorHandler) Export
+Procedure RunPipeline(Stages, ErrorHandler, Continuation, CallerName) Export
 	
-	If NotifyProcessingList.Count() = 0 Then
+	Pipeline = BuildNotifyProcessingPipeline(Stages, ErrorHandler, Continuation);
+	
+	Invoke(Pipeline, CallerName);
+	
+EndProcedure 
+
+Function BuildNotifyProcessingPipeline(Stages, ErrorHandler, Continuation) Export
+	
+	If Stages.Count() = 0 Then
 		Return PipelineNotifyProcessingInternalClient.EmptyProcedure2NotifyDescription();
 	EndIf; 
 	
-	StageHandlers = New Array(NotifyProcessingList.Count());
+	StageHandlers = New Array(Stages.Count() + 1); // + StageStopPipeline
 	
-	Index = NotifyProcessingList.UBound();
+	Index = Stages.Count();
 	
-	NotifyDescription = StageHandler(NotifyProcessingList[Index], Undefined, ErrorHandler);
+	NotifyDescription = StageHandler(StageStopPipeline(Continuation), Undefined, ErrorHandler);
 	StageHandlers[Index] = NotifyDescription;
 	
 	While Index > 0 Do
 		Index = Index - 1;
-		NotifyDescription = StageHandler(NotifyProcessingList[Index], NotifyDescription, ErrorHandler);
+		NotifyDescription = StageHandler(Stages[Index], NotifyDescription, ErrorHandler);
 		StageHandlers[Index] = NotifyDescription;
 	EndDo; 
 	
@@ -36,6 +48,27 @@ Procedure Invoke(StageHandler, CallerName, AdditionalParameters = Undefined) Exp
 	ExecuteNotifyProcessing(StageHandler, Context);
 	
 EndProcedure 
+
+Function CustomStage(ProcedureName = Undefined, Module = Undefined, AdditionalParameters = Undefined) Export
+	
+	NotifyDescription = New NotifyDescription(
+		ProcedureName,
+		Module,
+		AdditionalParameters
+	);
+	
+	DecoratorParameters = New Structure;
+	DecoratorParameters.Insert("NotifyDescription", NotifyDescription);
+	
+	CustomStageDecorator = New NotifyDescription(
+		"CustomStageDecorator",
+		PipelineNotifyProcessingInternalClient,
+		DecoratorParameters
+	);	
+	
+	Return CustomStageDecorator;
+	
+EndFunction  
 
 Procedure ErrorHandler(ErrorInfo, StandardProcessing, AdditionalParameters) Export
 	

@@ -44,7 +44,11 @@ EndProcedure
 
 &AtClient
 Procedure TestAsync(Command)
-		
+	
+	Pnp = PipelineNotifyProcessingClient;
+	
+	// Список этапов конвейера
+	
 	Stages = New Array;
 	
 	#Region Stages
@@ -64,27 +68,18 @@ Procedure TestAsync(Command)
 	ShowFileDialogCallback = New NotifyDescription("ShowFileDialogCallback", ThisObject, New Structure);
 	
 	// Стандартный этап для выбора файла/каталога в стандартном диалоге
-	StageShowFileDialog = PipelineNotifyProcessingClient.StageShowFileDialog(ShowFileDialogCallback, FileOpenDialog);
-	Stages.Add(StageShowFileDialog);
+	Stages.Add(Pnp.StageShowFileDialog(ShowFileDialogCallback, FileOpenDialog));
 	
 	// Пользовательский этап
-	StageTail2 = New NotifyDescription("StageTail2", ThisObject, New Structure);
-	Stages.Add(StageTail2);
-	
-	// Стандартный этап для остановки конвейера
-	StageStopPipeline = PipelineNotifyProcessingClient.StageStopPipeline(Undefined);
-	Stages.Add(StageStopPipeline);
-	
+	Stages.Add(Pnp.CustomStage("StageTail2", ThisObject, New Structure));
+		
 	#EndRegion // Stages
 	
 	// Обработчик ошибок, возникших на конвейере
-	PipelineErrorHandler = New NotifyDescription("PipelineErrorHandler", ThisObject, New Structure);
-	
-	// Построение конвейера
-	Pipeline = PipelineNotifyProcessingClient.BuildNotifyProcessingPipeline(Stages, PipelineErrorHandler);
+	ErrorHandler = New NotifyDescription("ErrorHandler", ThisObject, New Structure);
 	
 	// Запуск конвейера
-	PipelineNotifyProcessingClient.Invoke(Pipeline, "DataProcessor.Test.Form.TestAsync");
+	Pnp.RunPipeline(Stages, ErrorHandler, Undefined, "DataProcessor.Test.Form.TestAsync");
 	
 EndProcedure
 
@@ -97,11 +92,13 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	
 	DirectoryName = Result[0];
 	
+	Pnp = PipelineNotifyProcessingClient;
+	
 	// Обработчик ошибок, возникших на конвейере
 	ErrorParameters = New Structure;
 	ErrorParameters.Insert("DirectoryName", DirectoryName);
 	ErrorParameters.Insert("ParentContinuation", AdditionalParameters.Continuation);
-	PipelineErrorHandler = New NotifyDescription("PipelineErrorHandler", ThisObject, ErrorParameters);
+	ErrorHandler = New NotifyDescription("ErrorHandler", ThisObject, ErrorParameters);
 	
 	// Список этапов конвейера
 	
@@ -110,38 +107,26 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	#Region Stages
 	
 	// Стандартный этап для создания каталога
-	StageBeginCreatingDirectory = PipelineNotifyProcessingClient.StageBeginCreatingDirectory(Undefined, DirectoryName);
-	Stages.Add(StageBeginCreatingDirectory);
+	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName));
 	
 	// Стандартный этап для создания каталога
-	StageBeginCreatingDirectory = PipelineNotifyProcessingClient.StageBeginCreatingDirectory(Undefined, DirectoryName + "AccessVerification\", PipelineErrorHandler);
-	Stages.Add(StageBeginCreatingDirectory);
+	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName + "AccessVerification\", ErrorHandler));
 	
 	// Стандартный этап для удаления каталога	
-	StageBeginDeletingFiles = PipelineNotifyProcessingClient.StageBeginDeletingFiles(Undefined, DirectoryName + "AccessVerification\", Undefined);
-	Stages.Add(StageBeginDeletingFiles);
+	Stages.Add(Pnp.StageBeginDeletingFiles(Undefined, DirectoryName + "AccessVerification\", Undefined));
 	
 	// Пользовательский этап	
 	StageParameters = New Structure;
 	StageParameters.Insert("DirectoryName", DirectoryName);
-	StageSuccess = New NotifyDescription("StageSuccess", ThisObject, StageParameters);
-	Stages.Add(StageSuccess);
+	Stages.Add(Pnp.CustomStage("StageSuccess", ThisObject, StageParameters));
 	
 	// Пользовательский этап
-	StageTail1 = New NotifyDescription("StageTail1", ThisObject, New Structure);
-	Stages.Add(StageTail1);
-	
-	// Стандартный этап для остановки конвейера
-	StageStopPipeline = PipelineNotifyProcessingClient.StageStopPipeline(AdditionalParameters.Continuation);
-	Stages.Add(StageStopPipeline);
-	
+	Stages.Add(Pnp.CustomStage("StageTail1", ThisObject, New Structure));
+		
 	#EndRegion // Stages
 	
-	// Построение конвейера
-	Pipeline = PipelineNotifyProcessingClient.BuildNotifyProcessingPipeline(Stages, PipelineErrorHandler);
-	
 	// Запуск конвейера
-	PipelineNotifyProcessingClient.Invoke(Pipeline, "DataProcessor.Test.Form.ShowFileDialogCallback");
+	Pnp.RunPipeline(Stages, ErrorHandler, AdditionalParameters.Continuation, "DataProcessor.Test.Form.ShowFileDialogCallback");
 	
 EndProcedure
 
@@ -149,45 +134,35 @@ EndProcedure
 Procedure StageSuccess(Context, AdditionalParameters) Export
 		
 	Message("Success");
-	
-	// Передача управления на следующий этап
-	PipelineNotifyProcessingClient.Invoke(Context.Continuation, "DataProcessor.Test.Form.StageSuccess");
-	
+		
 EndProcedure
 
 &AtClient
 Procedure StageTail1(Context, AdditionalParameters) Export
 	
 	Message("Tail1");
-	
-	// Передача управления на следующий этап
-	PipelineNotifyProcessingClient.Invoke(Context.Continuation, "DataProcessor.Test.Form.StageTail1");
-	
+		
 EndProcedure
 
 &AtClient
 Procedure StageTail2(Context, AdditionalParameters) Export
 	
 	Message("Tail2");
-	
-	// Передача управления на следующий этап
-	
-	PipelineNotifyProcessingClient.Invoke(Context.Continuation, "DataProcessor.Test.Form.StageTail2");
-	
+		
 EndProcedure
 
 &AtClient
-Procedure PipelineErrorHandler(ErrorInfo, AdditionalParameters) Export
+Procedure ErrorHandler(ErrorInfo, AdditionalParameters) Export
 	
 	// no rights for directory creation, or this path is absent
 	
 	Message(StrTemplate("Error: Text = ""%1""; DirectoryName = ""%2""", BriefErrorDescription(ErrorInfo), AdditionalParameters.DirectoryName));
 	
 	// Передача управления на следующий этап родительского конвейера
-	//PipelineNotifyProcessingClient.Invoke(AdditionalParameters.ParentContinuation, "DataProcessor.Test.Form.PipelineErrorHandler");
+	//PipelineNotifyProcessingClient.Invoke(AdditionalParameters.ParentContinuation, "DataProcessor.Test.Form.ErrorHandler");
 	
 	// Передача управления на предпоследний этап
 	Continuation = AdditionalParameters.StageHandlers[AdditionalParameters.StageHandlers.UBound() - 1];
-	PipelineNotifyProcessingClient.Invoke(Continuation, "DataProcessor.Test.Form.PipelineErrorHandler");
+	PipelineNotifyProcessingClient.Invoke(Continuation, "DataProcessor.Test.Form.ErrorHandler");
 	
 EndProcedure
