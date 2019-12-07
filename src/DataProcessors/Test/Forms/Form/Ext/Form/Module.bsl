@@ -79,13 +79,10 @@ Procedure TestAsync(Command)
 	#EndRegion // Stages
 	
 	// Обработчик ошибок, возникших на конвейере
-	PipelineErrorHandler = New NotifyDescription("PipelineErrorHandler", ThisObject, New Structure);
-	
-	// Построение конвейера
-	Pipeline = Pnp.BuildNotifyProcessingPipeline(Stages, PipelineErrorHandler);
+	ErrorHandler = New NotifyDescription("ErrorHandler", ThisObject, New Structure);
 	
 	// Запуск конвейера
-	Pnp.Invoke(Pipeline, "DataProcessor.Test.Form.TestAsync");
+	Pnp.RunPipeline(Stages, ErrorHandler, "DataProcessor.Test.Form.TestAsync");
 	
 EndProcedure
 
@@ -104,7 +101,7 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	ErrorParameters = New Structure;
 	ErrorParameters.Insert("DirectoryName", DirectoryName);
 	ErrorParameters.Insert("ParentContinuation", AdditionalParameters.Continuation);
-	PipelineErrorHandler = New NotifyDescription("PipelineErrorHandler", ThisObject, ErrorParameters);
+	ErrorHandler = New NotifyDescription("ErrorHandler", ThisObject, ErrorParameters);
 	
 	// Список этапов конвейера
 	
@@ -116,7 +113,7 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName));
 	
 	// Стандартный этап для создания каталога
-	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName + "AccessVerification\", PipelineErrorHandler));
+	Stages.Add(Pnp.StageBeginCreatingDirectory(Undefined, DirectoryName + "AccessVerification\", ErrorHandler));
 	
 	// Стандартный этап для удаления каталога	
 	Stages.Add(Pnp.StageBeginDeletingFiles(Undefined, DirectoryName + "AccessVerification\", Undefined));
@@ -134,11 +131,8 @@ Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	
 	#EndRegion // Stages
 	
-	// Построение конвейера
-	Pipeline = Pnp.BuildNotifyProcessingPipeline(Stages, PipelineErrorHandler);
-	
 	// Запуск конвейера
-	Pnp.Invoke(Pipeline, "DataProcessor.Test.Form.ShowFileDialogCallback");
+	Pnp.RunPipeline(Stages, ErrorHandler, "DataProcessor.Test.Form.ShowFileDialogCallback");
 	
 EndProcedure
 
@@ -164,17 +158,17 @@ Procedure StageTail2(Context, AdditionalParameters) Export
 EndProcedure
 
 &AtClient
-Procedure PipelineErrorHandler(ErrorInfo, AdditionalParameters) Export
+Procedure ErrorHandler(ErrorInfo, AdditionalParameters) Export
 	
 	// no rights for directory creation, or this path is absent
 	
 	Message(StrTemplate("Error: Text = ""%1""; DirectoryName = ""%2""", BriefErrorDescription(ErrorInfo), AdditionalParameters.DirectoryName));
 	
 	// Передача управления на следующий этап родительского конвейера
-	//PipelineNotifyProcessingClient.Invoke(AdditionalParameters.ParentContinuation, "DataProcessor.Test.Form.PipelineErrorHandler");
+	//PipelineNotifyProcessingClient.Invoke(AdditionalParameters.ParentContinuation, "DataProcessor.Test.Form.ErrorHandler");
 	
 	// Передача управления на предпоследний этап
 	Continuation = AdditionalParameters.StageHandlers[AdditionalParameters.StageHandlers.UBound() - 1];
-	PipelineNotifyProcessingClient.Invoke(Continuation, "DataProcessor.Test.Form.PipelineErrorHandler");
+	PipelineNotifyProcessingClient.Invoke(Continuation, "DataProcessor.Test.Form.ErrorHandler");
 	
 EndProcedure

@@ -1,22 +1,30 @@
 ﻿
 #Region Public
 
-Function BuildNotifyProcessingPipeline(NotifyProcessingList, ErrorHandler) Export
+Procedure RunPipeline(Stages, ErrorHandler, CallerName) Export
 	
-	If NotifyProcessingList.Count() = 0 Then
+	Pipeline = BuildNotifyProcessingPipeline(Stages, ErrorHandler);
+	
+	Invoke(Pipeline, CallerName);
+	
+EndProcedure 
+
+Function BuildNotifyProcessingPipeline(Stages, ErrorHandler) Export
+	
+	If Stages.Count() = 0 Then
 		Return PipelineNotifyProcessingInternalClient.EmptyProcedure2NotifyDescription();
 	EndIf; 
 	
-	StageHandlers = New Array(NotifyProcessingList.Count());
+	StageHandlers = New Array(Stages.Count());
 	
-	Index = NotifyProcessingList.UBound();
+	Index = Stages.UBound();
 	
-	NotifyDescription = StageHandler(NotifyProcessingList[Index], Undefined, ErrorHandler);
+	NotifyDescription = StageHandler(Stages[Index], Undefined, ErrorHandler);
 	StageHandlers[Index] = NotifyDescription;
 	
 	While Index > 0 Do
 		Index = Index - 1;
-		NotifyDescription = StageHandler(NotifyProcessingList[Index], NotifyDescription, ErrorHandler);
+		NotifyDescription = StageHandler(Stages[Index], NotifyDescription, ErrorHandler);
 		StageHandlers[Index] = NotifyDescription;
 	EndDo; 
 	
