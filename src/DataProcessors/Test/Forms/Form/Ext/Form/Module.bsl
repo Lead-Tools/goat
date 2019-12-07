@@ -99,7 +99,10 @@ EndProcedure
 &AtClient
 Procedure ShowFileDialogCallback(Result, AdditionalParameters) Export
 	
+	// AdditionalParameters.Continuation - это следующий этап родительского конвейера
+	
 	If Result = Undefined Then
+		PipelineNotifyProcessingClient.Invoke(AdditionalParameters.Continuation, "DataProcessor.Test.Form.ShowFileDialogCallback:отказ");
 		Return;		
 	EndIf;
 	
