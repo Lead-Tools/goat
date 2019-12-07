@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.8">
 	<ConfigVersions>
-		<Metadata name="CommonModule.PipelineNotifyProcessingClient" id="ca119c28-9fbc-4233-ae4f-8825e63be20f" configVersion="8a10b3acf32c534aacc9423f78bc8fce00000000"/>
-		<Metadata name="CommonModule.PipelineNotifyProcessingClient.Module" id="ca119c28-9fbc-4233-ae4f-8825e63be20f.0" configVersion="b5063d8cda7b1b42a0d23da9b625db5600000000"/>
-		<Metadata name="CommonModule.PipelineNotifyProcessingInternalClient" id="dd8308f9-5ed4-4b99-a14b-8dd1cf2f6df4" configVersion="44bb1e1cb1506a40972c1539461f2eb800000000"/>
-		<Metadata name="CommonModule.PipelineNotifyProcessingInternalClient.Module" id="dd8308f9-5ed4-4b99-a14b-8dd1cf2f6df4.0" configVersion="ddf48df61d85684895ed355edc23d69100000000"/>
+		<Metadata name="CommonModule.PipelineNotifyProcessingClient" id="ca119c28-9fbc-4233-ae4f-8825e63be20f" configVersion="245cfb16f79609489cbbc07e628e4ddf00000000"/>
+		<Metadata name="CommonModule.PipelineNotifyProcessingClient.Module" id="ca119c28-9fbc-4233-ae4f-8825e63be20f.0" configVersion="bbb8d888ad3f124287048bb03d6a01a800000000"/>
+		<Metadata name="CommonModule.PipelineNotifyProcessingInternalClient" id="dd8308f9-5ed4-4b99-a14b-8dd1cf2f6df4" configVersion="bce7871c13cc864099cf2aa4615bc93400000000"/>
+		<Metadata name="CommonModule.PipelineNotifyProcessingInternalClient.Module" id="dd8308f9-5ed4-4b99-a14b-8dd1cf2f6df4.0" configVersion="dea721a43f3ea747a8f0b0ecb92368ac00000000"/>
 		<Metadata name="Configuration.PipelineNotifyProcessing" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="58ec14d3d3c71f4797495444598349c900000000"/>
 		<Metadata name="DataProcessor.Test" id="0f7471ab-31b3-4bc8-8e57-59bf7b63407b" configVersion="3dbd49100d962a41a0e6fead7e2a3a0c00000000"/>
-		<Metadata name="DataProcessor.Test.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc" configVersion="a70dbe96530d3f4f94ae3ccabab05d7600000000"/>
-		<Metadata name="DataProcessor.Test.Form.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc.0" configVersion="275aea2566369d4b93fb6e4bf05148fb00000000"/>
+		<Metadata name="DataProcessor.Test.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc" configVersion="cb5fa7a6affa8e4f8472ac017ad0591200000000"/>
+		<Metadata name="DataProcessor.Test.Form.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc.0" configVersion="6990f72ad644ab4e868173f3bc822ead00000000"/>
 		<Metadata name="Language.English" id="5ba4282e-8f1b-4b4b-8314-e7af79bd4761" configVersion="e6566e19c43c904aa538e0ecd903efa600000000"/>
 		<Metadata name="Language.Русский" id="c7e95bef-98a0-4aea-8265-378b5738362c" configVersion="86c07e271d6cf4448b89d3a79e743cb000000000"/>
 	</ConfigVersions>

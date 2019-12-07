@@ -267,6 +267,18 @@ EndProcedure
 
 #EndRegion // Wrappers
 
+#Region Decorators
+
+Procedure CustomStageDecorator(Context, AdditionalParameters) Export
+	
+	ExecuteNotifyProcessing(AdditionalParameters.NotifyDescription, Context); // TODO: может быть не Context?
+	
+	PipelineNotifyProcessingClient.Invoke(Context.Continuation, "PipelineNotifyProcessingInternalClient.CustomStageDecorator");
+	
+EndProcedure 
+
+#EndRegion // Decorators
+
 #EndRegion // Public
 
 #Region Private

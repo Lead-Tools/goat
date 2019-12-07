@@ -37,6 +37,27 @@ Procedure Invoke(StageHandler, CallerName, AdditionalParameters = Undefined) Exp
 	
 EndProcedure 
 
+Function CustomStage(ProcedureName = Undefined, Module = Undefined, AdditionalParameters = Undefined) Export
+	
+	NotifyDescription = New NotifyDescription(
+		ProcedureName,
+		Module,
+		AdditionalParameters
+	);
+	
+	DecoratorParameters = New Structure;
+	DecoratorParameters.Insert("NotifyDescription", NotifyDescription);
+	
+	CustomStageDecorator = New NotifyDescription(
+		"CustomStageDecorator",
+		PipelineNotifyProcessingInternalClient,
+		DecoratorParameters
+	);	
+	
+	Return CustomStageDecorator;
+	
+EndFunction  
+
 Procedure ErrorHandler(ErrorInfo, StandardProcessing, AdditionalParameters) Export
 	
 	PipelineNotifyProcessingInternalClient.ErrorHandler(ErrorInfo, StandardProcessing, AdditionalParameters);
