@@ -7,8 +7,8 @@
 		<Metadata name="CommonModule.PipelineNotifyProcessingInternalClient.Module" id="dd8308f9-5ed4-4b99-a14b-8dd1cf2f6df4.0" configVersion="aa6a9e077c3f8e4883c1e9f514c0af9100000000"/>
 		<Metadata name="Configuration.PipelineNotifyProcessing" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="58ec14d3d3c71f4797495444598349c900000000"/>
 		<Metadata name="DataProcessor.Test" id="0f7471ab-31b3-4bc8-8e57-59bf7b63407b" configVersion="3dbd49100d962a41a0e6fead7e2a3a0c00000000"/>
-		<Metadata name="DataProcessor.Test.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc" configVersion="bddbf3918325e348bff89c36d5f435ca00000000"/>
-		<Metadata name="DataProcessor.Test.Form.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc.0" configVersion="1847c32ad3f3fd4785e54a7a1b83c5c500000000"/>
+		<Metadata name="DataProcessor.Test.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc" configVersion="511e52cd64eb8c45a689135bceb9938000000000"/>
+		<Metadata name="DataProcessor.Test.Form.Form.Form" id="3da4150c-51fe-4f32-8b1b-8974c74362cc.0" configVersion="95e1a45b997dac4c9ac435f7d3124bcf00000000"/>
 		<Metadata name="Language.English" id="5ba4282e-8f1b-4b4b-8314-e7af79bd4761" configVersion="e6566e19c43c904aa538e0ecd903efa600000000"/>
 		<Metadata name="Language.Русский" id="c7e95bef-98a0-4aea-8265-378b5738362c" configVersion="86c07e271d6cf4448b89d3a79e743cb000000000"/>
 	</ConfigVersions>
