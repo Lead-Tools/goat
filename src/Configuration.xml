@@ -46,7 +46,7 @@
 			<UsePurposes>
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
 			</UsePurposes>
-			<ScriptVariant>English</ScriptVariant>
+			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
 			<Version/>
@@ -126,7 +126,7 @@
 			<MainClientApplicationWindowMode>Normal</MainClientApplicationWindowMode>
 			<DefaultInterface/>
 			<DefaultStyle/>
-			<DefaultLanguage>Language.English</DefaultLanguage>
+			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
 			<Copyright/>
@@ -145,7 +145,9 @@
 			<Language>Русский</Language>
 			<CommonModule>PipelineNotifyProcessingClient</CommonModule>
 			<CommonModule>PipelineNotifyProcessingInternalClient</CommonModule>
+			<CommonForm>КонвейерЗаданий</CommonForm>
 			<DataProcessor>Test</DataProcessor>
+			<DataProcessor>Тест</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
