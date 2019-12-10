@@ -145,6 +145,7 @@
 			<Language>Русский</Language>
 			<CommonModule>PipelineNotifyProcessingClient</CommonModule>
 			<CommonModule>PipelineNotifyProcessingInternalClient</CommonModule>
+			<CommonModule>КонвейерЗаданийКлиент</CommonModule>
 			<CommonForm>КонвейерЗаданий</CommonForm>
 			<DataProcessor>Test</DataProcessor>
 			<DataProcessor>Тест</DataProcessor>
