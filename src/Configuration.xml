@@ -143,12 +143,10 @@
 		<ChildObjects>
 			<Language>English</Language>
 			<Language>Русский</Language>
-			<CommonModule>PipelineNotifyProcessingClient</CommonModule>
-			<CommonModule>PipelineNotifyProcessingInternalClient</CommonModule>
 			<CommonModule>КонвейерЗаданийКлиент</CommonModule>
-			<CommonForm>КонвейерЗаданий</CommonForm>
-			<DataProcessor>Test</DataProcessor>
+			<CommonModule>КонвейерЗаданийСлужебныйКлиент</CommonModule>
 			<DataProcessor>Тест</DataProcessor>
+			<DataProcessor>Тест2</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
