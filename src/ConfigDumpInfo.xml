@@ -7,8 +7,8 @@
 		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент.Module" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f.0" configVersion="4f0e2be4fbf36647af6348ff94f42e6500000000"/>
 		<Metadata name="Configuration.Коза" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="822bc3b77bbe06459e8a7c299c46799d00000000"/>
 		<Metadata name="DataProcessor.Тест" id="748e6340-51d7-4f7d-83cf-f72a9e2823d3" configVersion="8ee3a1db6b56064da168ccb80ea6998b00000000"/>
-		<Metadata name="DataProcessor.Тест.Form.Форма" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0" configVersion="55d66b99af415a4798f21863de90a40800000000"/>
-		<Metadata name="DataProcessor.Тест.Form.Форма.Form" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0.0" configVersion="cb8ddf2216385d49ae1a6c91a3227b8300000000"/>
+		<Metadata name="DataProcessor.Тест.Form.Форма" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0" configVersion="caafcf0017cf2a4e8dc33f6a8c9f9ab000000000"/>
+		<Metadata name="DataProcessor.Тест.Form.Форма.Form" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0.0" configVersion="a77e000710c32648942c0843f817376700000000"/>
 		<Metadata name="DataProcessor.Тест.Form.Форма.Help" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0.1" configVersion="3cd67e91b8be6244962cf224f84033ca00000000"/>
 		<Metadata name="DataProcessor.Тест.Help" id="748e6340-51d7-4f7d-83cf-f72a9e2823d3.1" configVersion="2b1373bf3ffe3b4481299077b41b837b00000000"/>
 		<Metadata name="DataProcessor.Тест.ManagerModule" id="748e6340-51d7-4f7d-83cf-f72a9e2823d3.2" configVersion="ca8b107f9f2ab64985b4bb4d49f8a5d000000000"/>
