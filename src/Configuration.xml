@@ -28,15 +28,15 @@
 			</xr:ContainedObject>
 		</InternalInfo>
 		<Properties>
-			<Name>PipelineNotifyProcessing</Name>
+			<Name>Коза</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Pipeline notify processing</v8:content>
+					<v8:content>Goat (Task pipeline)</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Конвейерная обработка оповещений</v8:content>
+					<v8:content>Коза (Конвейер заданий)</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -46,7 +46,7 @@
 			<UsePurposes>
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>
 			</UsePurposes>
-			<ScriptVariant>English</ScriptVariant>
+			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
 			<Version/>
@@ -126,7 +126,7 @@
 			<MainClientApplicationWindowMode>Normal</MainClientApplicationWindowMode>
 			<DefaultInterface/>
 			<DefaultStyle/>
-			<DefaultLanguage>Language.English</DefaultLanguage>
+			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
 			<DetailedInformation/>
 			<Copyright/>
@@ -143,9 +143,10 @@
 		<ChildObjects>
 			<Language>English</Language>
 			<Language>Русский</Language>
-			<CommonModule>PipelineNotifyProcessingClient</CommonModule>
-			<CommonModule>PipelineNotifyProcessingInternalClient</CommonModule>
-			<DataProcessor>Test</DataProcessor>
+			<CommonModule>КонвейерЗаданийКлиент</CommonModule>
+			<CommonModule>КонвейерЗаданийСлужебныйКлиент</CommonModule>
+			<DataProcessor>Тест</DataProcessor>
+			<DataProcessor>Тест2</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

@@ -1,38 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.8">
-	<DataProcessor uuid="0f7471ab-31b3-4bc8-8e57-59bf7b63407b">
+	<DataProcessor uuid="55be2ae7-a1b5-4228-9359-f6d59bcad6a2">
 		<InternalInfo>
-			<xr:GeneratedType name="DataProcessorObject.Test" category="Object">
-				<xr:TypeId>c6b7dfe6-d974-40c7-95d0-fc9f656dc3fc</xr:TypeId>
-				<xr:ValueId>00a0f954-28b5-475b-a4e5-d185be792237</xr:ValueId>
+			<xr:GeneratedType name="DataProcessorObject.Тест2" category="Object">
+				<xr:TypeId>5d4927af-9a80-4520-b0d0-7854e5684435</xr:TypeId>
+				<xr:ValueId>a2e19bcf-e8ce-472a-a43f-c75199923e82</xr:ValueId>
 			</xr:GeneratedType>
-			<xr:GeneratedType name="DataProcessorManager.Test" category="Manager">
-				<xr:TypeId>f667f8fa-9a95-4a16-86bc-bf6837e5cbfa</xr:TypeId>
-				<xr:ValueId>2a7aa28c-a5bc-488e-bb72-48f071083375</xr:ValueId>
+			<xr:GeneratedType name="DataProcessorManager.Тест2" category="Manager">
+				<xr:TypeId>55cdca54-aa2c-4813-a13b-4acb1958ac30</xr:TypeId>
+				<xr:ValueId>02ac2e11-657e-4b80-8f86-8c2be0270f64</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>Test</Name>
+			<Name>Тест2</Name>
 			<Synonym>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Test</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тест</v8:content>
+					<v8:content>Тест2</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
 			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>DataProcessor.Test.Form.Form</DefaultForm>
+			<DefaultForm>DataProcessor.Тест2.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<ExtendedPresentation/>
 			<Explanation/>
 		</Properties>
 		<ChildObjects>
-			<Form>Form</Form>
+			<Form>Форма</Form>
 		</ChildObjects>
 	</DataProcessor>
 </MetaDataObject>

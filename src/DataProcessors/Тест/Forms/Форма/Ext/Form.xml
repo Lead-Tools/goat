@@ -4,25 +4,25 @@
 	<ChildItems>
 		<Button name="TestSync" id="1">
 			<Type>UsualButton</Type>
-			<CommandName>Form.Command.TestSync</CommandName>
+			<CommandName>Form.Command.ТестСинхронный</CommandName>
 			<ExtendedTooltip name="TestSyncExtendedTooltip" id="2"/>
 		</Button>
 		<Button name="TestAsync" id="5">
 			<Type>UsualButton</Type>
-			<CommandName>Form.Command.TestAsync</CommandName>
+			<CommandName>Form.Command.ТестАсинхронный</CommandName>
 			<ExtendedTooltip name="TestAsyncExtendedTooltip" id="6"/>
 		</Button>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Object" id="1">
 			<Type>
-				<v8:Type>cfg:DataProcessorObject.Test</v8:Type>
+				<v8:Type>cfg:DataProcessorObject.Тест</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
 	</Attributes>
 	<Commands>
-		<Command name="TestSync" id="1">
+		<Command name="ТестСинхронный" id="1">
 			<Title>
 				<v8:item>
 					<v8:lang>en</v8:lang>
@@ -33,9 +33,15 @@
 					<v8:content>Тест синхронный</v8:content>
 				</v8:item>
 			</Title>
-			<Action>TestSync</Action>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест синхронный</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестСинхронный</Action>
 		</Command>
-		<Command name="TestAsync" id="2">
+		<Command name="ТестАсинхронный" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>en</v8:lang>
@@ -46,7 +52,13 @@
 					<v8:content>Тест асинхронный</v8:content>
 				</v8:item>
 			</Title>
-			<Action>TestAsync</Action>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест асинхронный</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестАсинхронный</Action>
 		</Command>
 	</Commands>
 </Form>
