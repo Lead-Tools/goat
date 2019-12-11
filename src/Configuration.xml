@@ -28,15 +28,15 @@
 			</xr:ContainedObject>
 		</InternalInfo>
 		<Properties>
-			<Name>PipelineNotifyProcessing</Name>
+			<Name>Коза</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Pipeline notify processing</v8:content>
+					<v8:content>Goat (Task pipeline)</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Конвейерная обработка оповещений</v8:content>
+					<v8:content>Коза (Конвейер заданий)</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
