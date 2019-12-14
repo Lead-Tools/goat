@@ -10,4 +10,5 @@
 
 Философия:
 * MDD (Magic Driven Development)
+* Cosa Nostra: https://github.com/lead-tools/cosa_nostra
 * не сцы
