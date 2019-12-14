@@ -31,12 +31,12 @@
 			<Name>Коза</Name>
 			<Synonym>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Goat (Task pipeline)</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Коза (Конвейер заданий)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Cosa (Task pipeline)</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -141,10 +141,11 @@
 			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
-			<Language>English</Language>
 			<Language>Русский</Language>
+			<Language>English</Language>
 			<CommonModule>КонвейерЗаданийКлиент</CommonModule>
 			<CommonModule>КонвейерЗаданийСлужебныйКлиент</CommonModule>
+			<CommonForm>КонвейерЗаданий</CommonForm>
 			<DataProcessor>Тест</DataProcessor>
 			<DataProcessor>Тест2</DataProcessor>
 		</ChildObjects>
