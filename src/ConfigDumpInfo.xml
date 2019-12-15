@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.8">
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.9">
 	<ConfigVersions>
 		<Metadata name="CommonForm.КонвейерЗаданий" id="f3d9d955-011d-4056-b19f-c1fc833f358b" configVersion="337f9670ac9a06428bddf340609fa6cc00000000"/>
 		<Metadata name="CommonForm.КонвейерЗаданий.Form" id="f3d9d955-011d-4056-b19f-c1fc833f358b.0" configVersion="0cd47181bc805a4f90a74a8228b86e8200000000"/>
 		<Metadata name="CommonModule.КонвейерЗаданийКлиент" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c" configVersion="a83ecac8e1ee814ca47d28d90f141fb900000000"/>
 		<Metadata name="CommonModule.КонвейерЗаданийКлиент.Module" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c.0" configVersion="98d375f14272764ca42b627e8f347c1900000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f" configVersion="4aaa98536d3a0d40b8190212244f46f200000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент.Module" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f.0" configVersion="9264d2cb97085040a02df4cea7275ed000000000"/>
-		<Metadata name="Configuration.Коза" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="ed0ca9eaeafb8040979ab6c579ed8be900000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f" configVersion="3a0b234caef41c4abcb95da889ccb00100000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент.Module" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f.0" configVersion="e1e51d9c18667c4d800c169bd8ce60bb00000000"/>
+		<Metadata name="Configuration.Коза" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="fe1a67390234ad4483677843f99f21cf00000000"/>
 		<Metadata name="Configuration.Коза.ClientApplicationInterface" id="02b26372-c74f-4d2b-803a-25cae1b5f1d6.b" configVersion="a56f5d4fd4e58044a04c5d58191d7a6300000000"/>
 		<Metadata name="DataProcessor.Тест" id="748e6340-51d7-4f7d-83cf-f72a9e2823d3" configVersion="8ee3a1db6b56064da168ccb80ea6998b00000000"/>
 		<Metadata name="DataProcessor.Тест.Form.Форма" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0" configVersion="f6d91715b2ee044b8a58a3d9f1ac26ad00000000"/>
