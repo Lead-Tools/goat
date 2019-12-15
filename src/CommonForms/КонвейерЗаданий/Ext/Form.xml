@@ -9,6 +9,9 @@
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
 	<ChildItems>
 		<Table name="ЭтапыКонвейера" id="1">
 			<Representation>Tree</Representation>
