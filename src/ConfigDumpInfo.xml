@@ -3,18 +3,18 @@
 	<ConfigVersions>
 		<Metadata name="CommonForm.КонвейерЗаданий" id="f3d9d955-011d-4056-b19f-c1fc833f358b" configVersion="c936f9b42e0e7a4bad62b23980e1139400000000"/>
 		<Metadata name="CommonForm.КонвейерЗаданий.Form" id="f3d9d955-011d-4056-b19f-c1fc833f358b.0" configVersion="28bdb5b02c3f804a85c9f9483d9fd76100000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийКлиент" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c" configVersion="72a47816945d2449b6a0d96098d90fc200000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийКлиент.Module" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c.0" configVersion="20cbafd2b231cf49bca9c463fee99e2c00000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийКлиент" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c" configVersion="10ff306c68e79d47927ecf50a30853be00000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийКлиент.Module" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c.0" configVersion="a2dd56ccdfa39e46a79095030d2d073d00000000"/>
 		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f" configVersion="28a79fb7c0a91d4e86bd5ecbb40c46a300000000"/>
 		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент.Module" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f.0" configVersion="59ba0671531d9c428e73d484caf435cf00000000"/>
 		<Metadata name="Configuration.Коза" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="033f87b4c0afde48925da96587bb8cef00000000"/>
 		<Metadata name="Configuration.Коза.ClientApplicationInterface" id="02b26372-c74f-4d2b-803a-25cae1b5f1d6.b" configVersion="45cfa528622a304ba276829683f452f500000000"/>
 		<Metadata name="DataProcessor.Тест" id="748e6340-51d7-4f7d-83cf-f72a9e2823d3" configVersion="8ea20cbf329e0f409ebd0d08d30a651c00000000"/>
-		<Metadata name="DataProcessor.Тест.Form.Форма" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0" configVersion="ad2bc8fa3a59d74bb2c94ed42bbd3a3f00000000"/>
-		<Metadata name="DataProcessor.Тест.Form.Форма.Form" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0.0" configVersion="4480410eed8d3c4988330bd3d0029f0200000000"/>
+		<Metadata name="DataProcessor.Тест.Form.Форма" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0" configVersion="a002d592ae46744fb1e982d85984236a00000000"/>
+		<Metadata name="DataProcessor.Тест.Form.Форма.Form" id="b172b05c-98b7-46c9-87ce-e3a7a90c5db0.0" configVersion="bb00bddcdb6a174fa83725cbf35d4ffd00000000"/>
 		<Metadata name="DataProcessor.Тест2" id="55be2ae7-a1b5-4228-9359-f6d59bcad6a2" configVersion="7ad90d4927f24d4f9324aad418e3371200000000"/>
-		<Metadata name="DataProcessor.Тест2.Form.Форма" id="3895f34c-ffe0-4b51-b83e-8a9dafa6bb86" configVersion="a1f8a31e0c3ddb4faf19b008fbb7cd9500000000"/>
-		<Metadata name="DataProcessor.Тест2.Form.Форма.Form" id="3895f34c-ffe0-4b51-b83e-8a9dafa6bb86.0" configVersion="5e9b0bfdaa242c4ab0f97f60c851791500000000"/>
+		<Metadata name="DataProcessor.Тест2.Form.Форма" id="3895f34c-ffe0-4b51-b83e-8a9dafa6bb86" configVersion="c4a477aa232379419f78b724b31c24e100000000"/>
+		<Metadata name="DataProcessor.Тест2.Form.Форма.Form" id="3895f34c-ffe0-4b51-b83e-8a9dafa6bb86.0" configVersion="e0cf130a0038174fb8ce630722ea45e700000000"/>
 		<Metadata name="Language.English" id="5ba4282e-8f1b-4b4b-8314-e7af79bd4761" configVersion="33c746e931e7a143a4c1042d0dbd85af00000000"/>
 		<Metadata name="Language.Русский" id="c7e95bef-98a0-4aea-8265-378b5738362c" configVersion="a3fcd74ab392c649b8fe89d6a1c8324900000000"/>
 	</ConfigVersions>
