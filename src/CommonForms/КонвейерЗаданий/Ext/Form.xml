@@ -20,7 +20,6 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>ЭтапыКонвейера</DataPath>
-			<TreeSpecialSearch>false</TreeSpecialSearch>
 			<ContextMenu name="ЭтапыКонвейераКонтекстноеМеню" id="2"/>
 			<AutoCommandBar name="ЭтапыКонвейераКоманднаяПанель" id="3">
 				<Autofill>false</Autofill>
