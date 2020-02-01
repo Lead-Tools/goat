@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.9">
 	<ConfigVersions>
-		<Metadata name="CommonForm.КонвейерЗаданий" id="f3d9d955-011d-4056-b19f-c1fc833f358b" configVersion="b0d267452a1a914cb4fe9670d19d03cf00000000"/>
-		<Metadata name="CommonForm.КонвейерЗаданий.Form" id="f3d9d955-011d-4056-b19f-c1fc833f358b.0" configVersion="f5293ae3da1c354aa8deddf83f52479600000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийКлиент" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c" configVersion="6cf1d4711ea0f34d85b0e65cc160d6ee00000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийКлиент.Module" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c.0" configVersion="ba804b4e7b244248a1bf51643e2ebf0c00000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f" configVersion="798501c576882147af3c7f421bcdcb6500000000"/>
-		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент.Module" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f.0" configVersion="344463c1edf39f4fa6d6875c67d812b300000000"/>
+		<Metadata name="CommonForm.КонвейерЗаданий" id="f3d9d955-011d-4056-b19f-c1fc833f358b" configVersion="c936f9b42e0e7a4bad62b23980e1139400000000"/>
+		<Metadata name="CommonForm.КонвейерЗаданий.Form" id="f3d9d955-011d-4056-b19f-c1fc833f358b.0" configVersion="28bdb5b02c3f804a85c9f9483d9fd76100000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийКлиент" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c" configVersion="72a47816945d2449b6a0d96098d90fc200000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийКлиент.Module" id="28f2dd03-2f14-4187-a768-0b2afb5fa23c.0" configVersion="20cbafd2b231cf49bca9c463fee99e2c00000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f" configVersion="28a79fb7c0a91d4e86bd5ecbb40c46a300000000"/>
+		<Metadata name="CommonModule.КонвейерЗаданийСлужебныйКлиент.Module" id="eb2339d6-54b8-48b1-b6a7-4573054c8e9f.0" configVersion="59ba0671531d9c428e73d484caf435cf00000000"/>
 		<Metadata name="Configuration.Коза" id="56034ef7-a376-4eb4-b6c6-63da1cf4bf08" configVersion="033f87b4c0afde48925da96587bb8cef00000000"/>
 		<Metadata name="Configuration.Коза.ClientApplicationInterface" id="02b26372-c74f-4d2b-803a-25cae1b5f1d6.b" configVersion="45cfa528622a304ba276829683f452f500000000"/>
 		<Metadata name="DataProcessor.Тест" id="748e6340-51d7-4f7d-83cf-f72a9e2823d3" configVersion="8ea20cbf329e0f409ebd0d08d30a651c00000000"/>
